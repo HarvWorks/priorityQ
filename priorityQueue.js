@@ -11,23 +11,23 @@ var PriorityQ = function(){
 	// This is constant time, or O(1)
 	this.remove = function(){
 		var min = 0;
-		var result = arr[0];
+		var result = this.array[0];
 		// If it is too short don't return result, end early
 		if (this.array.length < 1) {
 			return false;
 		}
 		else {
 			// Find minimum
-			for (var i = 1; i < arr.length; i ++){
-				if ( arr[i] < arr[min]){
+			for (var i = 1; i < this.array.length; i ++){
+				if ( this.array[i] < this.array[min]){
 					min = i;
 				}
 			}
 			// set minimum to result
-			result = arr[min];
+			result = this.array[min];
 			// remove minimum
-			for (i = min; i < arr.length - 1; i ++){
-				arr[i] = arr[i + 1];
+			for (i = min; i < this.array.length - 1; i ++){
+				this.array[i] = this.array[i + 1];
 			}
 		}
 		return result;
